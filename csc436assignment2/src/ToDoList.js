@@ -9,7 +9,7 @@ const ToDoList = () => {
       <Row>
         {/* Left column with the form */}
         <Col sm={4}>
-          <div className="form-container">
+          <div className="form-container"> {/* Form styling */}
             <Form>
               <Form.Group controlId="formTitle">
                 <Form.Label>ToDo Item</Form.Label>
@@ -70,7 +70,7 @@ const getVariant = (dueDate) => {
   const today = new Date();
   const due = new Date(dueDate); // Parse the due date
 
-  
+  // Set times to 00:00:00 for today and due date to only compare date (not time)
   today.setHours(0, 0, 0, 0);
   due.setHours(0, 0, 0, 0);
 
