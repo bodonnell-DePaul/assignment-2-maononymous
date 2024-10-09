@@ -1,3 +1,7 @@
+/* Name: Abdullah Omer Mohammed 
+GitHub Username: maononymous
+Discord Udername: maononymous*/
+
 import React from 'react';
 import { ListGroup, Tab, Container, Row, Col, Form, Button } from 'react-bootstrap';
 import todoItems from './todoItems';
@@ -7,10 +11,10 @@ const ToDoList = () => {
   return (
     <Container>
       <Row>
-        {/* Left column with the form */}
+        // Left column with the form to add ToDo items
         <Col sm={4}>
-          <div className="form-container"> {/* Form styling */}
-            <Form>
+          <div className="form-container"> 
+            <Form> // Form to add ToDo items
               <Form.Group controlId="formTitle">
                 <Form.Label>ToDo Item</Form.Label>
                 <Form.Control type="text" placeholder="Add todo item" />
@@ -28,9 +32,9 @@ const ToDoList = () => {
           </div>
         </Col>
 
-        {/* Right column with the ToDo list */}
+        // Right column with the ToDo list
         <Col sm={8}>
-          <Tab.Container>
+          <Tab.Container> // Tab container for the ToDo list
             <Row>
               <Col sm={4}>
                 <ListGroup>
@@ -48,7 +52,7 @@ const ToDoList = () => {
                 </ListGroup>
               </Col>
               <Col sm={8}>
-                <Tab.Content>
+                <Tab.Content> // Tab content for displaying ToDo items
                   {todoItems.map((item, index) => (
                     <Tab.Pane key={index} eventKey={item.title}>
                       <h3 contentEditable>{item.description}</h3>
@@ -70,7 +74,6 @@ const getVariant = (dueDate) => {
   const today = new Date();
   const due = new Date(dueDate); // Parse the due date
 
-  // Set times to 00:00:00 for today and due date to only compare date (not time)
   today.setHours(0, 0, 0, 0);
   due.setHours(0, 0, 0, 0);
 
